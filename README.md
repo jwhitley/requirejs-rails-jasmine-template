@@ -23,19 +23,22 @@ should not make the developer reiterate this knowledge.
 
 ### guard
 
-One approach by [Michael Kessler](https://github.com/netzpirat) [uses guard to
-transpile and assemble the test suite from sources and
-specs](https://gist.github.com/673967).  This is nice for general Ruby apps
-without Sprockets, but fails to be DRY, nor does it respect the configuration
-and processing built into the Asset Pipeline.
+One approach by [Michael Kessler](https://github.com/netzpirat) uses guard to
+[transpile and assemble the test suite from sources and
+specs](https://gist.github.com/673967).  This is handy for general Ruby apps
+without Sprockets.  For a Rails app, it fails to be DRY and doesn't respect
+the configuration and processing built into the Asset Pipeline.
 
 ### Jasmine helpers
 
 Scott Burch's [jasmine-require](https://github.com/scottburch/jasmine-require)
-helper is another integration approach.  I never did get it configured and
-working with `requirejs-rails`, but that's probably a (lack of) documentation
-issue.  Setup aside, Scott's `requireStubs()` call is a nice idea worth
-keeping in mind.
+helper is another integration approach.  I honestly never did get it
+configured and working with `requirejs-rails`, but that's probably a (lack of)
+documentation issue.  Setup aside, Scott's `requireStubs()` call is a nice
+idea worth keeping in mind.
+
+My personal bias is that I would prefer a "native-AMD" module style rather
+than a Jasmine helper.
 
 ## Step-by-step guide
 
@@ -52,3 +55,16 @@ adheres to:
 - Helpers live in `spec/javascripts/helpers` as usual.  They are not
   currently processed through Sprockets, so CoffeeScript, etc. is not
   supported.
+
+### Update `Gemfile`
+
+Add these lines to your `Gemfile`:
+
+```ruby
+gem 'requirejs-rails', :git => 'git://github.com/jwhitley/requirejs-rails.git'
+
+group :development, :test do
+  gem 'jasmine', :git => 'git://github.com/pivotal/jasmine-gem.git'
+end
+```
+
