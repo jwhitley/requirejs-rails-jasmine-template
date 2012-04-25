@@ -72,3 +72,10 @@ end
 
 ```rake g jasmine:install```
 
+### Update development asset paths
+
+Add this line to `config/environments/development.rb`:
+
+```ruby
+config.assets.paths << Rails.root.join("spec", "javascripts")
+```
