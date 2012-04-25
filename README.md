@@ -58,7 +58,7 @@ adheres to:
 
 ### Update `Gemfile`
 
-Add these lines to your `Gemfile`:
+Add these lines to your `Gemfile`, then run `bundle install`:
 
 ```ruby
 gem 'requirejs-rails', :git => 'git://github.com/jwhitley/requirejs-rails.git'
@@ -67,4 +67,8 @@ group :development, :test do
   gem 'jasmine', :git => 'git://github.com/pivotal/jasmine-gem.git'
 end
 ```
+
+### Run the jasmine generator
+
+```rake g jasmine:install```
 
