@@ -79,3 +79,15 @@ Add this line to `config/environments/development.rb`:
 ```ruby
 config.assets.paths << Rails.root.join("spec", "javascripts")
 ```
+
+### Add files from this repository
+
+You'll need to add these files, in these relative locations, to your Rails
+app:
+
+```
+spec/javascripts/support/jasmine_config.rb
+spec/javascripts/support/run.html.erb
+spec/javascripts/support/jasmine.yml
+```
+
