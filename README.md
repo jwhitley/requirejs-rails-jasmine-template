@@ -91,3 +91,9 @@ spec/javascripts/support/run.html.erb
 spec/javascripts/support/jasmine.yml
 ```
 
+### Add specs
+
+Create your specs in `spec/javascripts/spec`.  Check out the example spec file
+in that directory.  To run it, start the jasmine server via the usual `rake
+jasmine` and navigate to `http://localhost:8888/`.
+
