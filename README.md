@@ -97,3 +97,13 @@ Create your specs in `spec/javascripts/spec`.  Check out the example spec file
 in that directory.  To run it, start the jasmine server via the usual `rake
 jasmine` and navigate to `http://localhost:8888/`.
 
+A spec in CoffeeScript would look like this:
+
+```coffeescript
+define (require) ->
+  PlaylistModel = require('models/playlist_model')
+
+  describe 'existence', ->
+    it 'should be defined', ->
+      expect(PlaylistModel).toBeDefined()
+```
