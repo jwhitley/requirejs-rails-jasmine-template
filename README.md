@@ -61,7 +61,7 @@ adheres to:
 Add these lines to your `Gemfile`, then run `bundle install`:
 
 ```ruby
-gem 'requirejs-rails', :git => 'git://github.com/jwhitley/requirejs-rails.git'
+gem 'requirejs-rails', '~> 0.8.0'
 
 group :development, :test do
   gem 'jasmine', :git => 'git://github.com/pivotal/jasmine-gem.git'
